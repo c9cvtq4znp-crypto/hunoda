@@ -1,0 +1,31 @@
+name: Auto Minify Code
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write  # For auto-commit
+
+concurrency:
+  group: $$   {{ github.workflow }}-   $${{ github.ref }}  # Prevent overlapping runs
+
+jobs:
+  minify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Minify files
+        uses: nizarmah/auto-minify@v3
+        with:
+          directory: '.'  # Minify all in root
+          overwrite: true  # Overwrite originals
+          filetypes: '*.html,*.css,*.js'  # Target HTML, CSS, JS
+
+      - name: Auto commit minified files
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Auto minified files"
