@@ -5,17 +5,17 @@
 <meta name=viewport content="width=device-width,initial-scale=1">
 <title>HUNODA - Privacy Policy</title>
 <meta http-equiv=Content-Security-Policy content="default-src 'self'; connect-src 'self' https://api.sunrise-sunset.org https://www.googletagmanager.com https://www.google-analytics.com; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline'; font-src 'self' data:; img-src 'self' data: https://www.googletagmanager.com https://www.google-analytics.com">
-<style>body,html{margin:0;padding:0;height:100%;width:100%;overflow:auto;background-color:#fff;display:flex;flex-direction:column;align-items:flex-start;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;color:#000;text-size-adjust:none}.header{display:flex;align-items:center;padding:20px;width:100%;box-sizing:border-box}.logo-text{font-size:clamp(19pt, 5vw, 29pt);font-weight:700;color:#ff4500;margin:0 20px 0 0;white-space:nowrap;cursor:pointer}.content{flex:1;padding:0 20px 40px;max-width:800px;text-align:justify;font-size:11pt;line-height:1.5}.content h2{font-size:14pt;margin-top:20px}.content p{margin:10px 0}footer{position:relative;bottom:10pt;left:0;width:100%;text-align:left;font-size:11pt;opacity:.6;color:#000;padding:20px;box-sizing:border-box}footer a{color:inherit;text-decoration:underline;margin-right:10px}footer span{position:absolute;right:20px;font-size:11px}@media (max-width:600px){.header{flex-direction:column;align-items:flex-start}.logo-text{margin:0 0 10px 0}footer span{position:static;display:block;text-align:right;margin-top:10px}}</style>
+<style>body,html{margin:0;padding:0;height:100%;width:100%;overflow:auto;background-color:#fff;display:flex;flex-direction:column;align-items:flex-start;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;color:#000;text-size-adjust:none}.header{display:flex;align-items:center;padding:20px;width:100%;box-sizing:border-box}.logo-text{font-size:clamp(19pt, 5vw, 29pt);font-weight:700;color:#ff4500;margin:0 20px 0 0;white-space:nowrap;cursor:pointer}.content{flex:1;padding:0 20px 40px;max-width:800px;text-align:justify;font-size:11pt;line-height:1.5}.content h2{font-size:14pt;margin-top:20px}.content p{margin:10px 0}footer{position:relative;bottom:10px;left:0;width:100%;text-align:left;font-size:11pt;opacity:.6;color:#000;padding:20px;box-sizing:border-box}footer a{color:inherit;text-decoration:underline;margin-right:10px}footer span{position:absolute;right:20px;font-size:11px}@media (max-width:600px){.header{flex-direction:column;align-items:flex-start}.logo-text{margin:0 0 10px 0}footer span{position:static;display:block;text-align:right;margin-top:10px}}</style>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-1TVNDQB0D5"></script>
 <script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","G-1TVNDQB0D5")</script>
 </head>
 <body>
 <header class=header>
-<h1 class=logo-text aria-label="HUNODA logo" onclick='window.location.href="/"'>HUNODA</h1>
+<h1 class=logo-text aria-label="HUNODA logo" onclick='window.location.href="../"'>HUNODA</h1>
 </header>
 <section class=content>
 <h2>Privacy Policy</h2>
-<p>Last updated: March 11, 2026</p>
+<p>Last updated: March 12, 2026</p>
 <p>HUNODA ("we", "our", or "us") operates the website hunoda.com (the "Site"). This Privacy Policy explains how we collect, use, and disclose information when you visit the Site. By using the Site, you agree to the collection and use of information in accordance with this policy.</p>
 <h2>Information We Collect</h2>
 <p>We use Google Analytics to collect anonymous information about your visit, such as your IP address, browser type, referring/exit pages, and date/time stamps. This helps us understand how visitors interact with the Site. No personally identifiable information is collected without your consent.</p>
@@ -34,7 +34,7 @@
 <p>If you have questions, email hello@hunoda.com.</p>
 </section>
 <footer>
-<a href=/ > &lt; Back</a>
+<a href=../ > &lt; Back</a>
 <span>© Copyright Hunoda 2026</span>
 </footer>
 <script>async function setLogoColorByTime(){const t="#FF4500";let e=t;try{const s=await fetch("https://api.sunrise-sunset.org/json?lat=22.302711&lng=114.177216&date=today&formatted=0"),o=await s.json();if("OK"===o.status){const s=new Date(o.results.sunrise),n=new Date(o.results.sunset),a=new Date;e=a>s&&a<n?t:"#000000"}}catch(t){console.error("Failed to fetch sunrise/sunset:",t)}document.querySelector(".logo-text").style.color=e}setLogoColorByTime()</script>
