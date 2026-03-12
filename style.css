@@ -8,7 +8,7 @@ html, body {
   justify-content: center;
   align-items: center;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: #FFFFFF; /* White text */
+  color: #FFFFFF;
   text-size-adjust: none;
   transition: background-color 0.5s ease;
 }
