@@ -1,25 +1,65 @@
-<html lang=en>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta charset=UTF-8>
-<meta name=viewport content="width=device-width,initial-scale=1">
-<meta name=description content="Pre and post-acquisition advisory for Asian SMEs. No corporate fluff. Just real, battle-tested guidance from founders who have been there. Let's talk">
-<meta name=robots content="index, follow">
-<link rel=canonical href=https://hunoda.com>
-<title>Building Value. Exiting Smart.</title>
-<link rel=preload href=style.css as=style>
-<link rel=preload href=script.js as=script>
-<meta http-equiv=Content-Security-Policy content="default-src 'self'; connect-src 'self' https://api.sunrise-sunset.org https://www.googletagmanager.com https://www.google-analytics.com; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline'; font-src 'self' data:; img-src 'self' data: https://www.googletagmanager.com https://www.google-analytics.com">
-<link rel=icon type=image/png sizes=16x16 href=favicon-16x16.png>
-<link rel=icon type=image/png sizes=32x32 href=favicon-32x32.png>
-<link rel=icon type=image/x-icon href=favicon.ico>
-<link rel=apple-touch-icon sizes=180x180 href=apple-touch-icon.png>
-<link rel=icon type=image/png sizes=192x192 href=android-chrome-192x192.png>
-<link rel=icon type=image/png sizes=512x512 href=android-chrome-512x512.png>
-<link rel=stylesheet href=style.css>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-1TVNDQB0D5"></script>
-<script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","G-1TVNDQB0D5")</script>
-<script type=application/ld+json>
-{
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Copyable Index HTML</title>
+  <style>
+    body { font-family: monospace; margin: 20px; }
+    pre { background: #f4f4f4; padding: 10px; border: 1px solid #ddd; white-space: pre-wrap; }
+    button { margin-bottom: 10px; }
+  </style>
+</head>
+<body>
+  <button onclick="copyCode()">Copy Code</button>
+  <pre id="codeBlock">
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;meta name="description" content="Pre and post-acquisition advisory for Asian SMEs. No corporate fluff. Just real, battle-tested guidance from founders who have been there. Let's talk"&gt;
+  &lt;meta name="robots" content="index, follow"&gt;
+  &lt;link rel="canonical" href="https://hunoda.com"&gt;
+
+  &lt;title&gt;Building Value. Exiting Smart.&lt;/title&gt;
+
+  &lt;!-- Preload for performance --&gt;
+  &lt;link rel="preload" href="style.css" as="style"&gt;
+  &lt;link rel="preload" href="script.js" as="script"&gt;
+
+  &lt;!-- CSP (updated to allow data: for images) --&gt;
+  &lt;meta http-equiv="Content-Security-Policy" 
+        content="default-src 'self'; 
+                 connect-src 'self' https://api.sunrise-sunset.org https://www.googletagmanager.com https://www.google-analytics.com; 
+                 script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; 
+                 style-src 'self' 'unsafe-inline'; 
+                 font-src 'self' data:; 
+                 img-src 'self' data: https://www.googletagmanager.com https://www.google-analytics.com"&gt;
+
+  &lt;!-- Favicons (relative paths) --&gt;
+  &lt;link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png"&gt;
+  &lt;link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png"&gt;
+  &lt;link rel="icon" type="image/x-icon" href="favicon.ico"&gt;
+  &lt;link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png"&gt;
+  &lt;link rel="icon" type="image/png" sizes="192x192" href="android-chrome-192x192.png"&gt;
+  &lt;link rel="icon" type="image/png" sizes="512x512" href="android-chrome-512x512.png"&gt;
+
+  &lt;!-- External CSS (relative path) --&gt;
+  &lt;link rel="stylesheet" href="style.css"&gt;
+
+  &lt;!-- Google Analytics (gtag.js) --&gt;
+  &lt;script async src="https://www.googletagmanager.com/gtag/js?id=G-1TVNDQB0D5"&gt;&lt;/script&gt;
+  &lt;script&gt;
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-1TVNDQB0D5');
+  &lt;/script&gt;
+
+  &lt;!-- JSON-LD Schema for SEO (updated description and contact) --&gt;
+  &lt;script type="application/ld+json"&gt;
+  {
     "@context": "https://schema.org",
     "@type": "WebSite",
     "name": "HUNODA",
@@ -37,13 +77,36 @@
       "url": "mailto:hello@hunoda.com"
     }
   }
-</script>
-</head>
-<body>
-<main role=main>
-<h1 class=logo-text>HUNODA</h1>
-</main>
-This site uses Google Analytics cookies. Privacy Policy © Copyright Hunoda 2026
-<script defer src=script.js></script>
+  &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;main role="main"&gt;
+    &lt;h1 class="logo-text"&gt;HUNODA&lt;/h1&gt;
+  &lt;/main&gt;
+
+  &lt;!-- Privacy Footer --&gt;
+  &lt;footer style="position: absolute; bottom: 10px; left: 0; width: 100%; text-align: center; font-size: 11px; opacity: 0.6; color: #FFFFFF;"&gt;
+    This site uses Google Analytics cookies. &lt;a href="privacy.html" style="color: inherit; text-decoration: underline;"&gt;Privacy Policy&lt;/a&gt;
+    &lt;span style="position: absolute; right: 20px;"&gt;© Copyright Hunoda 2026&lt;/span&gt;
+  &lt;/footer&gt;
+
+  &lt;!-- External JS (relative path) --&gt;
+  &lt;script defer src="script.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+  </pre>
+
+  <script>
+    function copyCode() {
+      var codeBlock = document.getElementById("codeBlock");
+      var range = document.createRange();
+      range.selectNode(codeBlock);
+      window.getSelection().removeAllRanges();
+      window.getSelection().addRange(range);
+      document.execCommand("copy");
+      window.getSelection().removeAllRanges();
+      alert("Code copied to clipboard!");
+    }
+  </script>
 </body>
 </html>
