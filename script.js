@@ -1,1 +1,28 @@
-async function setBackgroundByTime(){let a="#FF4500";try{const b=await fetch("https://api.sunrise-sunset.org/json?lat=22.302711&lng=114.177216&date=today&formatted=0"),f=await b.json();if("OK"===f.status){const b=new Date(f.results.sunrise),c=new Date(f.results.sunset),d=new Date;a=d>b&&d<c?"#FF4500":"#000000"}}catch(b){console.error("Failed to fetch sunrise/sunset:",b)}document.body.style.backgroundColor=a}setBackgroundByTime();
+async function setBackgroundByTime() {
+  const orange = '#FF4500';
+  const black = '#000000';
+  let color = orange;
+
+  try {
+    const response = await fetch('https://api.sunrise-sunset.org/json?lat=22.302711&lng=114.177216&date=today&formatted=0');
+    const data = await response.json();
+
+    if (data.status === 'OK') {
+      const sunriseUTC = new Date(data.results.sunrise);
+      const sunsetUTC = new Date(data.results.sunset);
+      const nowUTC = new Date();
+
+      if (nowUTC > sunriseUTC && nowUTC < sunsetUTC) {
+        color = orange;
+      } else {
+        color = black;
+      }
+    }
+  } catch (error) {
+    console.error('Failed to fetch sunrise/sunset:', error);
+  }
+
+  document.body.style.backgroundColor = color;
+}
+
+setBackgroundByTime();
