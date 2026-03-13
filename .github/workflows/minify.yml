@@ -7,9 +7,10 @@ on:
 
 permissions:
   contents: write  # For auto-commit
+  actions: read
 
 concurrency:
-  group: $$   {{ github.workflow }}-   $${{ github.ref }}  # Prevent overlapping runs
+  group: ${{ github.workflow }}-${{ github.ref }}  # Prevent overlapping runs
 
 jobs:
   minify:
@@ -21,9 +22,9 @@ jobs:
       - name: Minify files
         uses: nizarmah/auto-minify@v3
         with:
-          directory: '.'  # Minify all in root
-          overwrite: true  # Overwrite originals
-          filetypes: '*.html,*.css,*.js'  # Target HTML, CSS, JS
+          directory: '.'
+          overwrite: true
+          filetypes: '*.html,*.css,*.js'
 
       - name: Auto commit minified files
         uses: stefanzweifel/git-auto-commit-action@v5
