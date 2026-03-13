@@ -25,6 +25,6 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          token: ${{ secrets.GH_PAGES_SECRET }}   # ← Using your secret here
+          token: ${{ secrets.GH_PAGES_PAT }}   # ← PAT here
           branch: gh-pages-preview-${{ github.head_ref }}
           folder: .
