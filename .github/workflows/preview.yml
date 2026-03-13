@@ -16,7 +16,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Minify files (optional for preview)
+      - name: Minify files
         uses: asherf/minify-action@v1.0.2
         with:
           directory: '.'
