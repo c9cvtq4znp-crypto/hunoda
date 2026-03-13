@@ -17,16 +17,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v5  # Updated to v5 to address Node.js deprecation
+        uses: actions/checkout@v4
 
       - name: Minify files
-        uses: nizarmah/auto-minify@v3
+        uses: asherf/minify-action@v1.0.2
         with:
           directory: '.'
-          overwrite: true
-          # Removed 'filetypes' as it's not supported; action defaults to HTML/CSS/JS
+          output: '.'
+          html: true
+          css: true
+          js: true
 
       - name: Auto commit minified files
-        uses: stefanzweifel/git-auto-commit-action@v5  # Already on v5, no change needed
+        uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "Auto minified files"
