@@ -8,7 +8,7 @@ on:
 permissions:
   contents: read
   pull-requests: write
-  id-token: write  # Added for deployment action auth
+  id-token: write  # For deployment auth
 
 jobs:
   deploy-preview:
@@ -17,14 +17,11 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Minify files (optional for preview)
-        uses: asherf/minify-action@v1.0.2
+      - name: Minify files
+        uses: nizarmah/auto-minify@v3
         with:
           directory: '.'
-          output: '.'
-          html: true
-          css: true
-          js: true
+          overwrite: true
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
