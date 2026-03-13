@@ -6,9 +6,8 @@ on:
       - main
 
 permissions:
-  contents: write      # For pushing files/branches
-  pull-requests: write # For PR status/comments
-  id-token: write      # Required for auth in deploy action
+  contents: read
+  pull-requests: write
 
 jobs:
   deploy-preview:
@@ -26,5 +25,6 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          branch: gh-pages-preview-${{ github.head_ref }}  # Unique preview branch
+          token: ${{ secrets.GH_PAGES_TOKEN }}  # Use the PAT secret
+          branch: gh-pages-preview-${{ github.head_ref }}
           folder: .
