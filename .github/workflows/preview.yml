@@ -10,7 +10,7 @@ permissions:
   pull-requests: write
 
 jobs:
-  deploy-preview:
+  preview:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -22,9 +22,17 @@ jobs:
           directory: '.'
           overwrite: true
 
-      - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@v4
+      - name: Upload preview artifact
+        uses: actions/upload-artifact@v4
         with:
-          token: ${{ secrets.GH_PAGES_PAT }}   # ← PAT here
-          branch: gh-pages-preview-${{ github.head_ref }}
-          folder: .
+          name: preview-site-${{ github.head_ref }}
+          path: .
+          retention-days: 5
+
+      - name: Comment preview link
+        uses: thollander/actions-comment-pull-request@v3
+        with:
+          message: |
+            **Preview ready!**  
+            Download the artifact "preview-site-${{ github.head_ref }}" from the workflow run below to test the changes locally.
+            (Or wait for manual download link in comments.)
