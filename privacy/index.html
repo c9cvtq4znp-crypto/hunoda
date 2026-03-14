@@ -52,7 +52,7 @@
       padding: 0 20px 40px;
       max-width: 800px;
       text-align: justify;
-      font-size: calc(11pt * 0.9);  /* Exactly 10% smaller */
+      font-size: calc(11pt * 0.9);
       line-height: 1.5;
     }
 
@@ -65,31 +65,36 @@
       margin: 10px 0;
     }
 
-    footer {
-      position: relative;
-      bottom: 10px;
-      left: 0;
+    /* Privacy page footer - independent styling */
+    .privacy-footer {
       width: 100%;
-      text-align: left;
+      padding: 20px;
+      box-sizing: border-box;
       font-size: calc(11pt * 0.9);
       opacity: 0.6;
       color: #000000;
-      padding: 20px;
-      box-sizing: border-box;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: none;
     }
 
-    footer a {
+    .privacy-footer a {
       color: inherit;
       text-decoration: underline;
-      margin-right: 10px;
+      white-space: nowrap;
     }
 
-    footer span {
-      position: absolute;
-      right: 20px;
-      font-size: calc(11px * 0.9);
+    .privacy-footer a:visited {
+      color: inherit;
     }
 
+    .privacy-footer span {
+      color: inherit;
+      white-space: nowrap;
+    }
+
+    /* Mobile styles for privacy page */
     @media (max-width: 600px) {
       .header {
         flex-direction: column;
@@ -100,11 +105,16 @@
         margin: 0 0 10px 0;
       }
 
-      footer span {
-        position: static;
-        display: block;
-        text-align: right;
-        margin-top: 10px;
+      .privacy-footer {
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        gap: 10px;
+      }
+
+      .privacy-footer a,
+      .privacy-footer span {
+        white-space: normal;
       }
     }
   </style>
@@ -153,7 +163,7 @@
     <p>If you have questions, email <a href="mailto:hello@hunoda.com">hello@hunoda.com</a>.</p>
   </section>
 
-  <footer>
+  <footer class="privacy-footer">
     <a href="/"> &lt; Back</a>
     <span>© Copyright Hunoda 2026</span>
   </footer>
