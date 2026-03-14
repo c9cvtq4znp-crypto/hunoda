@@ -1,1 +1,85 @@
-html,body{color:#fff;text-size-adjust:none;justify-content:center;align-items:center;width:100%;height:100%;margin:0;padding:0;font-family:Helvetica Neue,Helvetica,Arial,sans-serif;transition:background-color .5s;display:flex;overflow:hidden}.logo-text{text-align:center;word-wrap:break-word;max-width:90%;margin:0;padding:20px;font-size:clamp(70%,9vw,18mm);font-weight:700;line-height:1.1}
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #FFFFFF;
+  text-size-adjust: none;
+  transition: background-color 0.5s ease;
+}
+
+.logo-text {
+  font-size: clamp(70%, 9vw, 18mm);
+  font-weight: 700;
+  text-align: center;
+  line-height: 1.1;
+  margin: 0;
+  padding: 20px;
+  max-width: 90%;
+  word-wrap: break-word;
+}
+
+/* Homepage footer styles - stacked layout */
+footer {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  width: 100%;
+  font-size: 11px;
+  opacity: 0.6;
+  color: #FFFFFF;
+  padding: 0 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  text-align: center;
+}
+
+.footer-left {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+}
+
+.footer-left a,
+.footer-left a:visited {
+  color: inherit;
+  text-decoration: underline;
+  white-space: nowrap;
+}
+
+.footer-left span {
+  white-space: nowrap;
+}
+
+.footer-right {
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* Mobile adjustments */
+@media (max-width: 480px) {
+  footer {
+    gap: 8px;
+  }
+  
+  .footer-left {
+    gap: 5px;
+  }
+  
+  .footer-left a,
+  .footer-left a:visited,
+  .footer-left span {
+    white-space: normal;
+  }
+}
