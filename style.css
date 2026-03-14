@@ -1,1 +1,84 @@
-html,body{color:#fff;text-size-adjust:none;justify-content:center;align-items:center;width:100%;height:100%;margin:0;padding:0;font-family:Helvetica Neue,Helvetica,Arial,sans-serif;transition:background-color .5s;display:flex;overflow:hidden}.logo-text{text-align:center;word-wrap:break-word;max-width:90%;margin:0;padding:20px;font-size:clamp(70%,9vw,18mm);font-weight:700;line-height:1.1}footer{text-align:center;opacity:.6;color:#fff;box-sizing:border-box;width:100%;padding:0 10px;font-size:11px;position:absolute;bottom:10px;left:0}.footer-row{flex-wrap:wrap;justify-content:center;align-items:center;gap:5px;display:flex}.footer-row a{color:inherit;white-space:nowrap;text-decoration:underline}.footer-row span{white-space:nowrap}.footer-copyright{text-align:center;width:100%;margin-top:5px}@media (width<=480px){.footer-row{flex-flow:wrap;gap:5px}.footer-row a,.footer-row span{white-space:normal}.footer-copyright{margin-top:8px}}
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #FFFFFF;
+  text-size-adjust: none;
+  transition: background-color 0.5s ease;
+}
+
+.logo-text {
+  font-size: clamp(70%, 9vw, 18mm);
+  font-weight: 700;
+  text-align: center;
+  line-height: 1.1;
+  margin: 0;
+  padding: 20px;
+  max-width: 90%;
+  word-wrap: break-word;
+}
+
+/* Footer styles - DESKTOP FIRST APPROACH */
+footer {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  width: 100%;
+  font-size: 11px;
+  opacity: 0.6;
+  color: #FFFFFF;
+  padding: 0 20px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.footer-left {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.footer-left a {
+  color: inherit;
+  text-decoration: underline;
+  white-space: nowrap;
+}
+
+.footer-left span {
+  white-space: nowrap;
+}
+
+.footer-right {
+  white-space: nowrap;
+  text-align: right;
+}
+
+/* Mobile styles - ONLY override when needed */
+@media (max-width: 480px) {
+  footer {
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+    text-align: center;
+  }
+  
+  .footer-left {
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .footer-right {
+    text-align: center;
+  }
+}
