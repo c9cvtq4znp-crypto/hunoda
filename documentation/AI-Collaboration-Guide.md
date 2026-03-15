@@ -22,8 +22,7 @@ Hunoda/
 ├── robots.txt
 ├── sitemap.xml
 └── .github/workflows/ # CI/CD (minify automation)
-├── documentation/
-│ └── AI-Collaboration-Guide.md # AI Collaboration Guide
+
 text
 
 ### Key Files & Their Purpose
