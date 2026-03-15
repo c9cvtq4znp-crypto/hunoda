@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>HUNODA - Page Not Found</title>
 
-  <!-- Preload for performance -->
-  <link rel="preload" href="style.css" as="style">
-  <link rel="preload" href="script.js" as="script">
+  <!-- Preload for performance - use absolute paths -->
+  <link rel="preload" href="/style.css" as="style">
+  <link rel="preload" href="/script.js" as="script">
 
   <!-- CSP (matches homepage with Cloudflare) -->
   <meta http-equiv="Content-Security-Policy" 
@@ -18,16 +18,16 @@
                  font-src 'self' data:; 
                  img-src 'self' data: https://www.googletagmanager.com https://www.google-analytics.com">
 
-  <!-- Favicons (relative paths) -->
-  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="android-chrome-192x192.png">
-  <link rel="icon" type="image/png" sizes="512x512" href="android-chrome-512x512.png">
+  <!-- Favicons - use absolute paths -->
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/android-chrome-512x512.png">
 
-  <!-- External CSS (same as homepage) -->
-  <link rel="stylesheet" href="style.css">
+  <!-- External CSS - use absolute path -->
+  <link rel="stylesheet" href="/style.css">
 
   <!-- Google Analytics (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-1TVNDQB0D5"></script>
@@ -61,7 +61,7 @@
     .message-container a {
       color: inherit;
       text-decoration: underline;
-      font-size: inherit; /* Inherits from parent */
+      font-size: inherit;
       transition: opacity 0.2s ease;
     }
 
@@ -77,6 +77,8 @@
     body {
       position: relative;
       min-height: 100vh;
+      margin: 0;
+      padding: 0;
     }
 
     main {
@@ -110,7 +112,7 @@
     </div>
   </footer>
 
-  <!-- External JS (same as homepage for dynamic background) -->
-  <script defer src="script.js"></script>
+  <!-- External JS - use absolute path -->
+  <script defer src="/script.js"></script>
 </body>
 </html>
