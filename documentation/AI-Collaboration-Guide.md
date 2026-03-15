@@ -25,7 +25,7 @@
     └── .github/workflows/ # CI/CD (minify automation)
     ├── documentation/
     │ └── AI-Collaboration Guide # AI Collaboration Guide ( project documentation)
-        ├── github/workflows
+    ├── github/workflows
     │ └── deploy.yml
     │ └── minify.yml
     │ └── pages-deploy.yml
@@ -166,3 +166,39 @@ The CSP must always include:
 - When adding blog/articles: Use /blog/ folder with index.html per post
 - Readiness assessment tool: Will need JS framework (React/Vue) or vanilla JS
 - Maintain CSP updates with any new external services
+
+## Guide Maintenance Protocol
+
+### Purpose
+The Guide Maintenance Section defines the standard process for creating, updating, and maintaining the `AI-COLLABORATION-GUIDE.md` file. Following this protocol ensures consistent formatting, accurate documentation, and efficient collaboration.
+
+### File Location
+- **Repository Path:** `documentation/AI-COLLABORATION-GUIDE.md`
+- **Access:** Available at `https://github.com/df-852/Hunoda/blob/main/documentation/AI-COLLABORATION-GUIDE.md`
+
+### When to Update This Guide
+
+Update this document when:
+- New pages or features are added to the site
+- Design preferences change (colors, fonts, spacing)
+- New bugs are discovered and fixed
+- Workflow configurations are modified
+- New external services are integrated
+- Any project decision that future sessions should know about
+
+### Formatting rules
+
+The formatting rules should be strictly followed to ensure the document is readable by human users, not just AI agents, and consistent throughout, making the information easy to read and understand. If formatting rules are not properly described in this document, fall back to the provided .md or .txt file, whichever is provided, and ensure the formatting is consistent. Indent and back line need to be strictly followed to ensure the format is consistent.
+
+  - use "##" before the name of each main section (This set the correct size and style for each main section title)
+  - use "###' before the name of each subsection (This set the correct size and style each subsection title)
+  - Table formatting should follow the following format using "|" and "-----" to create the table border
+  
+| Column 1 | Column 2 |
+|----------|----------|
+| Data A   | Data B   |
+
+ - Code formatting should always start after a break line and with three backticks followed by the name of the language identifier. The closing should use three backticks and should be on the line after the final line of code within the block, with no other content on that line.
+- Use single backticks when you want to call out a short snippet of code, a filename, or a command within a sentence
+- When creating or updating a file architecture diagram, or a sitemap, use two indents followed by this sign ├── for the root level and use this sign │ └── for subsequent level
+- Updated AI-Colaboration-Guideline should always be updated and provided in a single .txt document with correct indentation, spacing, and formatting rules
