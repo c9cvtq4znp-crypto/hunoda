@@ -170,7 +170,7 @@ The CSP must always include:
 ## Guide Maintenance Protocol
 
 ### Purpose
-The Guide Maintenance Section defines the standard process for creating, updating, and maintaining the `AI-COLLABORATION-GUIDE.md` file. Following this protocol ensures consistent formatting, accurate documentation, and efficient collaboration.
+The Guide Maintenance Section defines the standard process for creating, updating, and maintaining the `AI-COLLABORATION-GUIDE.md` file. Following this protocol ensures consistent formatting, accurate documentation, and efficient collaboration. 
 
 ### File Location
 - **Repository Path:** `documentation/AI-COLLABORATION-GUIDE.md`
@@ -201,4 +201,9 @@ The formatting rules should be strictly followed to ensure the document is reada
  - Code formatting should always start after a break line and with three backticks followed by the name of the language identifier. The closing should use three backticks and should be on the line after the final line of code within the block, with no other content on that line.
 - Use single backticks when you want to call out a short snippet of code, a filename, or a command within a sentence
 - When creating or updating a file architecture diagram, or a sitemap, use two indents followed by this sign ├── for the root level and use this sign │ └── for subsequent level
-- Updated AI-Colaboration-Guideline should always be updated and provided in a single .txt document with correct indentation, spacing, and formatting rules
+
+### Output Files
+- The AI agent should follow the instructions set out in this Guide, including when to update and the formatting rules
+- The AI agent should provide a summary of the changes made with clear explanations for review by the user
+- For any updates, the AI Agent should always consolidate the updates and output into a single file in .txt format, ready to be downloaded by the users.
+- Output file should be in .txt format, consolidated, following the formatting rules to ensure readibility
