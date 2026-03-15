@@ -1,18 +1,15 @@
-Project Overview
+**Project Overview**
+
 Site: https://hunoda.com
-
 Hosting: GitHub Pages (main branch)
-
 Domain: Cloudflare (transferred from GoDaddy)
-
 Email: iCloud custom domain (hello@hunoda.com)
-
 Analytics: Google Analytics (G-1TVNDQB0D5)
-
 Background: Dynamic day/night (orange #FF4500 / black #000000) based on Hong Kong sunrise/sunset
 
-Technical Architecture
-Repository Structure
+**Technical Architecture**
+
+**Repository Structure**
 text
 Hunoda/
 ├── index.html              # Homepage
