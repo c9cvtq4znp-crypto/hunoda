@@ -56,6 +56,7 @@ text
 ### Footer Specifications
 
 #### Homepage Footer
+
 ```css
 footer {
   position: absolute;
@@ -72,7 +73,8 @@ footer {
   text-align: center;
 }
 
-#### Privacy Page Footer
+Privacy Page Footer
+css
 .privacy-footer {
   width: 100%;
   padding: 20px;
@@ -89,6 +91,7 @@ Responsive Breakpoints
 Breakpoint	Behavior
 ≤480px	Homepage footer allows text wrapping
 ≤600px	Privacy page footer stacks vertically
+
 Content Security Policy (CSP)
 The CSP must always include:
 
@@ -99,6 +102,7 @@ script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://stati
 style-src 'self' 'unsafe-inline';
 font-src 'self' data:;
 img-src 'self' data: https://www.googletagmanager.com https://www.google-analytics.com
+
 Clean URLs
 Privacy page: /privacy (not /privacy.html)
 
@@ -106,26 +110,33 @@ Implement via folder structure: privacy/index.html
 
 All internal links must use clean URLs
 
+
 Common Fixes & Lessons Learned
 Issue: Footer alignment on privacy page
 Fix: Use .privacy-footer class with display: flex; justify-content: space-between;
 Mobile: Switch to flex-direction: column;
 
+
 Issue: CSS affecting both homepage and privacy
 Fix: Always scope privacy-specific styles with unique class (.privacy-footer), never reuse homepage classes.
+
 
 Issue: Minify workflow crashing
 Cause: Invisible character at start of style.css
 Fix: Re-save file in plain text editor, remove BOM, ensure first character is visible.
 
+
 Issue: Cloudflare beacon blocked by CSP
 Fix: Add https://static.cloudflareinsights.com to script-src and https://cloudflareinsights.com to connect-src.
+
 
 Issue: Visited links turning purple
 Fix: Always include a:visited { color: inherit; }
 
+
 Issue: Font size inconsistency between pages
 Fix: Use explicit 11px for all footer text, not relative units.
+
 
 Deployment & CI/CD
 Minify Workflow
@@ -135,12 +146,14 @@ Minifies HTML, CSS, JS
 
 If it fails: Check for invisible characters in CSS/JS files
 
+
 Manual Deploy (Emergency)
 Commit directly to main
 
 Wait 2-3 minutes for GitHub Pages rebuild
 
 Purge Cloudflare cache if changes don't appear
+
 
 SEO & Search Console
 Property type: Domain property (sc-domain:hunoda.com)
@@ -150,6 +163,7 @@ Sitemap: /sitemap.xml (includes / and /privacy)
 Google Analytics: Connected via G-1TVNDQB0D5
 
 Schema: Organization markup with contact email
+
 
 Design Principles
 Match homepage as reference when in doubt
@@ -162,6 +176,7 @@ Clean, minimal, professional
 
 No visual surprises across pages
 
+
 Future Development Notes
 When adding blog/articles: Use /blog/ folder with index.html per post
 
@@ -170,3 +185,5 @@ Readiness assessment tool: Will need JS framework (React/Vue) or vanilla JS
 Maintain CSP updates with any new external services
 
 Last updated: March 15, 2026
+
+text
