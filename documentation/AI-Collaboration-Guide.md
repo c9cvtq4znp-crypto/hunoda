@@ -25,6 +25,12 @@
     └── .github/workflows/ # CI/CD (minify automation)
     ├── documentation/
     │ └── AI-Collaboration Guide # AI Collaboration Guide ( project documentation)
+        ├── github/workflows
+    │ └── deploy.yml
+    │ └── minify.yml
+    │ └── pages-deploy.yml
+    │ └── preview.yml
+    
 
 ### Key Files & Their Purpose
 | File | Purpose | Critical Rules |
