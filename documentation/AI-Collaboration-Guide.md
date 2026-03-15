@@ -11,19 +11,20 @@
 ## Technical Architecture
 
 ### Repository Structure
-Hunoda/
-├── index.html # Homepage
-├── style.css # Global styles (homepage + shared)
-├── script.js # Background color logic
-├── privacy/
-│ └── index.html # Privacy page (clean URL)
-├── 404.html # Custom error page
-├── favicon files # All favicon sizes
-├── robots.txt
-├── sitemap.xml
-└── .github/workflows/ # CI/CD (minify automation)
 
-text
+    Hunoda/
+    ├── index.html # Homepage
+    ├── style.css # Global styles (homepage + shared)
+    ├── script.js # Background color logic
+    ├── privacy/
+    │ └── index.html # Privacy page (clean URL)
+    ├── 404.html # Custom error page
+    ├── favicon files # All favicon sizes
+    ├── robots.txt
+    ├── sitemap.xml
+    └── .github/workflows/ # CI/CD (minify automation)
+    ├── documentation/
+    │ └── AI-Collaboration Guide # AI Collaboration Guide ( project documentation)
 
 ### Key Files & Their Purpose
 | File | Purpose | Critical Rules |
@@ -57,7 +58,7 @@ text
 
 #### Homepage Footer
 
-```css
+```CSS
 footer {
   position: absolute;
   bottom: 10px;
@@ -72,9 +73,9 @@ footer {
   gap: 8px;
   text-align: center;
 }
-
-Privacy Page Footer
-css
+```
+### Privacy Page Footer
+```CSS
 .privacy-footer {
   width: 100%;
   padding: 20px;
@@ -86,102 +87,76 @@ css
   align-items: center;
 }
 /* Mobile: switches to column */
+```
+### Responsive Breakpoints
+ | Breakpoint | Behavior |
+ | ---------- | -------- |
+ | `≤480px` | Homepage footer allows text wrapping
+ | `≤600px`  |	Privacy page footer stacks vertically
 
-Responsive Breakpoints
-Breakpoint	Behavior
-≤480px	Homepage footer allows text wrapping
-≤600px	Privacy page footer stacks vertically
-
-Content Security Policy (CSP)
+### Content Security Policy (CSP)
 The CSP must always include:
 
-text
-default-src 'self';
-connect-src 'self' https://api.sunrise-sunset.org https://www.googletagmanager.com https://www.google-analytics.com https://cloudflareinsights.com;
-script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://static.cloudflareinsights.com;
-style-src 'self' 'unsafe-inline';
-font-src 'self' data:;
-img-src 'self' data: https://www.googletagmanager.com https://www.google-analytics.com
+    default-src 'self';
+    connect-src 'self' https://api.sunrise-sunset.org https://www.googletagmanager.com https://www.google-analytics.com https://cloudflareinsights.com;
+    script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://static.cloudflareinsights.com;
+    style-src 'self' 'unsafe-inline';
+    font-src 'self' data:;
+    img-src 'self' data: https://www.googletagmanager.com https://www.google-analytics.com
 
-Clean URLs
-Privacy page: /privacy (not /privacy.html)
+### Clean URLs
+- Privacy page: `/privacy` (not `/privacy.html`)
+- Implement via folder structure: `privacy/index.html`
+- All internal links must use clean URLs
 
-Implement via folder structure: privacy/index.html
+## Common Fixes & Lessons Learned
 
-All internal links must use clean URLs
+### Issue: Footer alignment on privacy page
+- **Fix:** Use `.privacy-footer` class with `display: flex; justify-content: space-between;`
+- **Mobile:** Switch to `flex-direction: column;`
 
+### Issue: CSS affecting both homepage and privacy
+- **Fix:** Always scope privacy-specific styles with unique class `(.privacy-footer)`, never reuse homepage classes.
 
-Common Fixes & Lessons Learned
-Issue: Footer alignment on privacy page
-Fix: Use .privacy-footer class with display: flex; justify-content: space-between;
-Mobile: Switch to flex-direction: column;
+### Issue: Minify workflow crashing
+- **Cause:** Invisible character at start of `style.css`
+- **Fix:** Re-save file in plain text editor, remove BOM, ensure first character is visible.
 
+### Issue: Cloudflare beacon blocked by CSP
+- **Fix:** Add `https://static.cloudflareinsights.com` to `script-src` and `https://cloudflareinsights.com to connect-src.`
 
-Issue: CSS affecting both homepage and privacy
-Fix: Always scope privacy-specific styles with unique class (.privacy-footer), never reuse homepage classes.
+### Issue: Visited links turning purple
+- **Fix:** Always include `a:visited { color: inherit; }`
 
+### Issue: Font size inconsistency between pages
+- **Fix:** Use explicit `11px` for all footer text, not relative units.
 
-Issue: Minify workflow crashing
-Cause: Invisible character at start of style.css
-Fix: Re-save file in plain text editor, remove BOM, ensure first character is visible.
+## Deployment & CI/CD
 
+### Minify Workflow
+- Runs on push to main
+- Minifies HTML, CSS, JS
+- If it fails: Check for invisible characters in CSS/JS files
 
-Issue: Cloudflare beacon blocked by CSP
-Fix: Add https://static.cloudflareinsights.com to script-src and https://cloudflareinsights.com to connect-src.
+### Manual Deploy (Emergency)
+- Commit directly to main
+- Wait 2-3 minutes for GitHub Pages rebuild
+- Purge Cloudflare cache if changes don't appear
 
+### SEO & Search Console
+- Property type: Domain property (sc-domain:hunoda.com)
+- Sitemap: /sitemap.xml (includes / and /privacy)
+- Google Analytics: Connected via G-1TVNDQB0D5
+- Schema: Organization markup with contact email
 
-Issue: Visited links turning purple
-Fix: Always include a:visited { color: inherit; }
+### Design Principles
+- Match homepage as reference when in doubt
+- Stacked footer is default (homepage style)
+- Mobile-first responsive design
+- Clean, minimal, professional
+- No visual surprises across pages
 
-
-Issue: Font size inconsistency between pages
-Fix: Use explicit 11px for all footer text, not relative units.
-
-
-Deployment & CI/CD
-Minify Workflow
-Runs on push to main
-
-Minifies HTML, CSS, JS
-
-If it fails: Check for invisible characters in CSS/JS files
-
-
-Manual Deploy (Emergency)
-Commit directly to main
-
-Wait 2-3 minutes for GitHub Pages rebuild
-
-Purge Cloudflare cache if changes don't appear
-
-
-SEO & Search Console
-Property type: Domain property (sc-domain:hunoda.com)
-
-Sitemap: /sitemap.xml (includes / and /privacy)
-
-Google Analytics: Connected via G-1TVNDQB0D5
-
-Schema: Organization markup with contact email
-
-
-Design Principles
-Match homepage as reference when in doubt
-
-Stacked footer is default (homepage style)
-
-Mobile-first responsive design
-
-Clean, minimal, professional
-
-No visual surprises across pages
-
-
-Future Development Notes
-When adding blog/articles: Use /blog/ folder with index.html per post
-
-Readiness assessment tool: Will need JS framework (React/Vue) or vanilla JS
-
-Maintain CSP updates with any new external services
-
-*Last updated: March 15, 2026*
+### Future Development Notes
+- When adding blog/articles: Use /blog/ folder with index.html per post
+- Readiness assessment tool: Will need JS framework (React/Vue) or vanilla JS
+- Maintain CSP updates with any new external services
